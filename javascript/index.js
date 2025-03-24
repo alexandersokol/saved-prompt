@@ -58,9 +58,13 @@ async function sendPromptData() {
     }
 }
 
+function moveExtraSaveColumn() {
+    let quickSettings = gradioApp().getElementById("quicksettings");
+    quickSettings.appendChild(document.getElementById("cucurumba_extra_save_dir_edit"));
+}
+
 onUiLoaded(() => {
-
-
+    moveExtraSaveColumn()
     const originalButton = document.getElementById("txt2img_generate");
     if (originalButton) {
         originalButton.addEventListener('click', (event) => {
